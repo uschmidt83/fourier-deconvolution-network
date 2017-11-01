@@ -195,6 +195,7 @@ if __name__ == '__main__':
         show(result,title)
     else:
         if args.save_all_stages:
+            assert not args.finetuned
             log('Saving results of all stages 01-%02d'%n_stages)
             for t in range(n_stages):
                 result = crop_for_kernel(from_tensor(pred[t]),kernel)
